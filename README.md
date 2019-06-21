@@ -2,6 +2,7 @@
 Useful functions for performing Bayesian linear regression and time series analysis.
 
 ## bayesian_linear_regression.R 
+### beta.posterior
 Function that computes the marginal posterior distribution for the weight parameters (coefficients) in an ordinary linear regression problem. Assumes the prior is 1/sigma^2 so that the posterior for weights follows a multivariate normal distribution.
 
 Inputs:
