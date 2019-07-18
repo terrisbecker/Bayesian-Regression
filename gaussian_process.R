@@ -18,9 +18,9 @@ gp <- function(x, mean.vec, kernel = 'gaussian', sigma = 1){
 }
 
 # An example
-x <- seq(1,10, by = 0.1)
-mean.vec <- integer(length(x))
-f <- gp(x, mean.vec)
+x <- seq(1,10, by = 1)
+mean.vec <- train.in
+f <- gp(train.in, mean.vec)
 mycols <- wes_palette('Zissou1', 5, type = 'continuous')
 
 plot(x, f, ylim = c(-5,5), col = mycols[1], type = 'l')
