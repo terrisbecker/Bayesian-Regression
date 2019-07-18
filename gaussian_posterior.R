@@ -22,10 +22,10 @@ gp.posterior <- function(test.in, train.in, train.out){
 	print('computing mean vector')
 	mean.vec <- K[(train.l+1):nrow(K), 1:train.l]%*%solve(K[1:train.l, 1:train.l])%*%train.out
 	print('computing posterior covariance')
-	#cov.vec <- K[(train.l+1):nrow(K), (train.l+1):ncol(K)] - 
-	#	K[(train.l+1):nrow(K), 1:train.l]%*%solve(K[1:train.l, 1:train.l])%*%K[1:train.l, (train.l+1):ncol(K)]
-	#f <- mvrnorm(1, mean.vec, cov.vec)
-	return(mean.vec)
+	cov.vec <- K[(train.l+1):nrow(K), (train.l+1):ncol(K)] - 
+		K[(train.l+1):nrow(K), 1:train.l]%*%solve(K[1:train.l, 1:train.l])%*%K[1:train.l, (train.l+1):ncol(K)]
+	f <- mvrnorm(1, mean.vec, cov.vec)
+	return(f)
 }
 
 
